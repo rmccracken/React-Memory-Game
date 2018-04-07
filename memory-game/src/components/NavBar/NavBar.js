@@ -2,14 +2,11 @@ import React from "react";
 import "./NavBar.css";
 
 const NavBar = props => (
-  <div>
+  <div class="navbar">
       <ul className="nav navbar">
-          <li class="navbar-brand">Baseball Classic</li>
-          <li
-              className={props.message}>
-               {props.message}
-          </li>
-          <li> Score: <span>{props.curScore}</span> | Top Score: {props.topScore}</li>
+          <li className="navbar-brand">MLB Memory Game</li>
+
+          <li> Score: <span>{props.currentScore}</span> | Top Score: {props.topScore}</li>
       </ul>
   </div>
 );
