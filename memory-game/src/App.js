@@ -1,30 +1,38 @@
 import React, { Component } from "react";
-import FriendCard from "./components/FriendCard";
+import TeamCard from "./components/TeamCard";
+import NavBar from "./components/NavBar";
+// import Footer from "./components/Footer";
 import Wrapper from "./components/Wrapper";
 import Title from "./components/Title";
-import friends from "./friends.json";
+import teams from "./teams.json";
 import "./App.css";
 
 class App extends Component {
-  // Setting this.state.friends to the friends json array
+  // Setting this.state.teams to the teams json array
   state = {
-    friends
+    teams: teams,
+    topeScore: 0,
+    currentScore: 0,
+    message: "Click a teamm to begin"
   };
 
-  removeFriend = id => {
-    // Filter this.state.friends for friends with an id not equal to the id being removed
-    const friends = this.state.friends.filter(friend => friend.id !== id);
-    // Set this.state.friends equal to the new friends array
-    this.setState({ friends });
-  };
 
-  // Map over this.state.friends and render a FriendCard component for each friend object
+
+  // Map over this.state.teams and render a TeamCard component for each friend object
   render() {
     return (
-      <Wrapper>
+      
+        <Wrapper>
+      <NavBar
+      message={this.state.message}
+      currentScore={this.state.currentScore}
+      topScore={this.state.topScore}
+      ></NavBar> 
+      
+
         <Title>Friends List</Title>
-        {this.state.friends.map(friend => (
-          <FriendCard
+        {this.state.teams.map(friend => (
+          <TeamCard
             removeFriend={this.removeFriend}
             id={friend.id}
             key={friend.id}
@@ -33,7 +41,11 @@ class App extends Component {
           />
         ))}
       </Wrapper>
+
     );
+    // <Footer>
+        
+    // </Footer>
   }
 }
 

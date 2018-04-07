@@ -1,0 +1,14 @@
+y
+.navbar {
+    position: relative;
+    top: 0;
+    left: 0;
+    background: rgb(0, 45, 114);
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    font-size: 24px;
+    
+    width: 33%;
+
+}
